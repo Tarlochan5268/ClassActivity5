@@ -22,6 +22,14 @@ public class Product {
         return false;
     }
 
+    public double chkdiscount()
+    {
+        if(getPrice() >=100)
+            return (getPrice()*0.05);
+        else if(getPrice()>40 && getPrice()<100)
+            return (getPrice()*0.01);
+        return 0;
+    }
 
 
     public Product(int no, String name, double cost, int stock) {
