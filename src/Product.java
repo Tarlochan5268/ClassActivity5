@@ -1,10 +1,24 @@
 public class Product {
     int no;
     String name;
-    int cost;
+    double cost;
     int stock;
 
-    public Product(int no, String name, int cost, int stock) {
+    public double getPrice()
+    {
+        if(this.cost>=100)
+             return this.cost + (this.cost * 0.3);
+        else if(this.cost>=50 && this.cost<100)
+            return this.cost + (this.cost * 0.35);
+        else if(this.cost<50)
+            return this.cost + (this.cost * 0.45);
+        return -1;
+    }
+
+
+
+
+    public Product(int no, String name, double cost, int stock) {
         this.no = no;
         this.name = name;
         this.cost = cost;
@@ -30,11 +44,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
