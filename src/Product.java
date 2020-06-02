@@ -15,6 +15,12 @@ public class Product {
         return -1;
     }
 
+    public boolean chkStock()
+    {
+        if(this.stock>10)
+            return true;
+        return false;
+    }
 
 
 
