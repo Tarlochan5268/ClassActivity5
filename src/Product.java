@@ -4,6 +4,19 @@ public class Product {
     double cost;
     int stock;
 
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "no=" + no +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
+                ", stock=" + stock +
+                ", price=" + getPrice()+
+                ", discount=" + chkdiscount()+
+                '}';
+    }
+
     public double getPrice()
     {
         if(this.cost>=100)
@@ -19,15 +32,16 @@ public class Product {
     {
         if(this.stock>10)
             return true;
-        return false;
+        else
+            return false;
     }
 
     public double chkdiscount()
     {
         if(getPrice() >=100)
-            return (getPrice()- getPrice()*0.05);
+            return 0.05;
         else if(getPrice()>40 && getPrice()<100)
-            return (getPrice()-getPrice()*0.01);
+            return 0.01;
         return 0;
     }
 
@@ -37,6 +51,7 @@ public class Product {
         this.name = name;
         this.cost = cost;
         this.stock = stock;
+        System.out.println(toString());
     }
 
     public Product() {

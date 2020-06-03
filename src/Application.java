@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Application {
     Product products[];
 
@@ -12,13 +14,14 @@ public class Application {
         };
     }
 
+
     double findPrice(String name)
     {
         for (Product mProduct:products) {
             if(mProduct.getName().equalsIgnoreCase(name))
-                return mProduct.chkdiscount();
+                return (mProduct.getPrice() - mProduct.getPrice()*mProduct.chkdiscount());
         }
-        return -1;
+        return 0;
     }
 
     int inStockProducts()
