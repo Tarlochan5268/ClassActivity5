@@ -25,9 +25,9 @@ public class Product {
     public double chkdiscount()
     {
         if(getPrice() >=100)
-            return (getPrice()*0.05);
+            return (getPrice()- getPrice()*0.05);
         else if(getPrice()>40 && getPrice()<100)
-            return (getPrice()*0.01);
+            return (getPrice()-getPrice()*0.01);
         return 0;
     }
 

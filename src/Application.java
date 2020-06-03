@@ -16,8 +16,19 @@ public class Application {
     {
         for (Product mProduct:products) {
             if(mProduct.getName().equalsIgnoreCase(name))
-                return mProduct.getPrice();
-
+                return mProduct.chkdiscount();
         }
+        return -1;
     }
+
+    int inStockProducts()
+    {
+        int count = 0;
+        for (Product mProduct:products) {
+            if(!mProduct.chkStock())
+                count++;
+        }
+        return count;
+    }
+
 }
